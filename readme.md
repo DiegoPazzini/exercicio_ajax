@@ -26,7 +26,7 @@ Na branch formulario_ajax foi criada uma página simples com os informações a 
 <h2>Visualização Online</h2>
 A landing page do projeto está disponível para visualização na Vercel. Você pode acessá-la através do seguinte link:
  
-Página com informações do Github:
+Página com informações do Github: https://exercicio-ajax-lake.vercel.app/
 
 Página formulário: 
 

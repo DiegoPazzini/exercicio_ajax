@@ -1,23 +1,66 @@
-document.addEventListener('DOMContentLoaded' , function(){
-    const profileAvatar = document.querySelector('#avatar');
-    const profileName = document.querySelector('#name');
-    const profileUserName = document.querySelector('#user-name');
-    const profileLink = document.querySelector('#p-link');
-    const repositorios = document.querySelector('#reps');
-    const followers = document.querySelector('#followers');
-    const follows = document.querySelector('#follows');
+// document.addEventListener("DOMContentLoaded", function(){
+//     document.getElementById("btn-buscar-cep").addEventListener("click", function(){
+//         const xhttp = new XMLHttpRequest()
+//         const cep = document.getElementById("cep").value
+//         const endpoint = `https://viacep.com.br/ws/${cep}/json`
+
+//         xhttp.open("GET", endpoint)
+//         xhttp.send()
+//     })
+// })
+
+$(document).ready(function(){
+    $("#cep").mask("00000-000")
     
-    fetch('https://api.github.com/users/DiegoPazzini')
-    .then(function(res){
-        return res.json();
+    $("#btn-buscar-cep").click(function(){
+        const cep = $("#cep").val()
+        const endpoint = `https://viacep.com.br/ws/${cep}/json`
+        const botao = $(this)
+        $(botao).find("i").addClass("d-none")
+        $(botao).find("span").removeClass("d-none")
+
+        // $.ajax(endpoint).done(function (resposta) {
+        //     const logradouro = resposta.logradouro
+        //     const bairro = resposta.bairro
+        //     const cidade = resposta.localidade
+        //     const estado = resposta.uf
+        //     const endereco = `${logradouro}, ${bairro} - ${cidade} - ${estado}`
+        //     $("#endereco").val(endereco)
+
+        //     setTimeout(() => {
+        //         $(botao).find("i").removeClass("d-none")
+        //         $(botao).find("span").addClass("d-none")
+        //     }, 4000);
+        // })
+
+        fetch(endpoint) //chama o ajax sem a necessidade do Jquery
+        .then(function (resposta) {
+            return resposta.json()
+        })
+        .then(function (json) {
+            const logradouro = json.logradouro
+            const bairro = json.bairro
+            const cidade = json.localidade
+            const estado = json.uf
+            const endereco = `${logradouro}, ${bairro} - ${cidade} - ${estado}`
+            $("#endereco").val(endereco)
+        })
+        .catch(function(erro){
+            alert("Ocorreu um erro ao buscar o endereço, tente novamente mais tarde.")
+        })
+        .finally(function(){  // trata o error (código bloqueante) e segue em diante independente do que aconteça
+            setTimeout(() => {
+                $(botao).find("i").removeClass("d-none")
+                $(botao).find("span").addClass("d-none")
+            }, 1000);
+        })
     })
-    .then(function(json){
-        profileAvatar.src = json.avatar_url;
-        profileName.innerText = json.name;
-        profileUserName.innerText = `@${json.login}`;
-        repositorios.innerText = json.public_repos;
-        followers.innerText = json.followers;
-        follows.innerText = json.following;
-        profileLink.href = json.html_url;
+
+    $("#formulario-pedido").submit(function(evento) {  //function callback
+        evento.preventDefault() // previne o comportamento padrão do formulário que é de carregar a página
+
+        if ($("#nome").val().length == 0) {  //val retorna como uma string e length conta quantidade de caracteres
+            throw new Error("Digite o nome")
+        }
     })
 })

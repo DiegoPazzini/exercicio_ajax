@@ -19,7 +19,8 @@ Application Program Interface
 API é a sigla em inglês para Application Programming Interface, ouinterface de programação de aplicações. As interfaces de programação de aplicativos (APIs) são conjuntos de ferramentas, definições e protocolos para a criação de aplicações de software. A interface pode ser pensada como um contrato de serviço entre duas aplicações (Front-end e Back-end).
 
 <h2>Descrição do projeto:</h2>
-Página desenvolvida com informações do Github (repositórios, seguidores e seguindo). Informações essas preenchidas via requisição Ajax.
+
+Na branch exercicio_ajax a página foi desenvolvida com informações do Github (repositórios, seguidores e seguindo). Informações essas preenchidas via requisição Ajax.
 
 Na branch formulario_ajax foi criada uma página simples com os informações a serem preesnchidas com dados básicos (nome, sobrenome, endereço) e dados da entrega (cep,endereço e número), e através do preenchimento do cep e clica no botão de busca o Ajax busca e preenche as informações de endereço.
 

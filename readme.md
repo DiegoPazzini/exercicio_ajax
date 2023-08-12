@@ -21,14 +21,13 @@ API é a sigla em inglês para Application Programming Interface, ouinterface de
 <h2>Descrição do projeto:</h2>
 Página desenvolvida com informações do Github (repositórios, seguidores e seguindo). Informações essas preenchidas via requisição Ajax.
 
-Na branch formulario_ajax foi criada uma página simples com os informações a serem preesnchidas com dados básicos (nome, sobrenome, endereço) e dados da entrega (cep,endereço e número), e através do preenchimento do cep e clica no botão de busca o Ajax busca e preenche as informações de endereço.
+Na branch formulario_ajax foi criada uma página simples com os informações a serem preesnchidas com dados básicos (nome, sobrenome, endereço) e dados da entrega (cep,endereço e número), e através do preenchimento do cep e clicando no botão de busca o Ajax localiza e preenche as informações de endereço.
 
 <h2>Visualização Online</h2>
 A landing page do projeto está disponível para visualização na Vercel. Você pode acessá-la através do seguinte link:
  
 Página com informações do Github: https://exercicio-ajax-lake.vercel.app/
 
-Página formulário: 
 
 
 

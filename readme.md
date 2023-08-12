@@ -29,7 +29,6 @@ A landing page do projeto está disponível para visualização na Vercel. Você
  
 Página com informações do Github: https://exercicio-ajax-lake.vercel.app/
 
-Página formulário: 
 
 
 

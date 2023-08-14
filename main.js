@@ -46,7 +46,7 @@ $(document).ready(function(){
             $("#endereco").val(endereco)
         })
         .catch(function(erro){
-            alert("Ocorreu um erro ao buscar o endereço, tente novamente mais tarde.")
+            alert("Ocorreu um erro ao buscar o endereço, tente novamente ou mais tarde.")
         })
         .finally(function(){  // trata o error (código bloqueante) e segue em diante independente do que aconteça
             setTimeout(() => {
